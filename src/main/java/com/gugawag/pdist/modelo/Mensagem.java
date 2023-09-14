@@ -10,6 +10,11 @@ public class Mensagem {
     private long id;
     private String texto;
 
+    public Mensagem(long id, String texto) {
+        this.id = id;
+        this.texto = texto;
+    }
+
     public Mensagem(){
 
     }
