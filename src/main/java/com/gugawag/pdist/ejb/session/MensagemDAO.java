@@ -5,6 +5,8 @@ import jakarta.ejb.Stateless;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 
+import java.util.List;
+
 @Stateless
 public class MensagemDAO {
 
@@ -13,6 +15,14 @@ public class MensagemDAO {
 
     public void inserir(Mensagem mensagem){
         em.persist(mensagem);
+    }
+
+    public List<Mensagem> listar() {
+        return em.createQuery("FROM Mensagem").getResultList();
+    }
+
+    public Mensagem pesquisarByID(int id) {
+        return em.find(Mensagem.class, id);
     }
 
 
