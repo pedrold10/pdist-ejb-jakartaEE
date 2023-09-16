@@ -10,7 +10,7 @@ import java.util.List;
 @Stateless
 public class MensagemDAO {
 
-    @PersistenceContext(unitName = "default")
+    @PersistenceContext(unitName = "bd2")
     private EntityManager em;
 
     public void inserir(Mensagem mensagem){
